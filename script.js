@@ -82,8 +82,6 @@ function reset()
     let newColumns = +prompt("How many columns?", "16");
     let newRows = +prompt("How many rows?", "16");
 
-    console.log(newColumns);
-
     if(newColumns > 100 || newRows > 100) 
     {
         alert("Columns and rows cannot be over 100!");
@@ -99,8 +97,6 @@ function reset()
         alert("Inputs must be a number!");
         return;
     }
-
-    console.log("hello?")
 
     boxes.forEach(box => box.remove());
     for(box of boxes) boxes.pop();
