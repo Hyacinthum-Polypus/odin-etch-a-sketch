@@ -10,6 +10,8 @@ h1 {
 
 button {
     background-color: white;
+    padding: 5px 20px;
+    margin: 18px;
 }
 
 #container {
@@ -25,8 +27,4 @@ button {
 .box {
     box-sizing: border-box;
     background-color: white;
-}
-
-#reset {
-    padding: 5px 20px;
 }

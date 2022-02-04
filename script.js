@@ -1,20 +1,62 @@
+let penMode = 'grey-scale';
 const container = document.getElementById('container');
 let boxes = [];
 
-function randomHue()
+function getRandomHexidecimal()
 {
-    let randomNumber = Math.floor(Math.random() * 1000) % 360;
-    console.log(randomNumber)
-    return randomNumber;
+    let randomNumber = Math.floor(Math.random() * 1000) % 16;
+    
+    if(randomNumber < 10)
+    {
+        return randomNumber;
+    }
+    else
+    {
+        switch(randomNumber)
+        {
+            case 10:
+                return 'A';
+            case 11:
+                return 'B';
+            case 12:
+                return 'C';
+            case 13:
+                return 'D';
+            case 14:
+                return 'E';
+            case 15:
+                return 'F';
+        }
+    }
+}
+
+function getRandomColor()
+{
+    let newColor = '#';
+
+    for(let i = 0; i < 6; i++)
+    newColor += getRandomHexidecimal();
+
+    return newColor;
 }
 
 function colorIn()
 {
-    this["data-passed"] = this["data-passed"] - 10;
-    this.style.backgroundColor = `hsl(0, 0%, ${this["data-passed"]}%)`;
+    switch(penMode)
+    {
+        case 'grey-scale':
+            this["data-passed"] = this["data-passed"] - 10;
+            this.style.backgroundColor = `hsl(0, 0%, ${this["data-passed"]}%)`;
+        break;
+        case 'rainbow':
+            this["data-passed"] = 100;
+            this.style.backgroundColor = getRandomColor();
+        break;
+        case 'eraser':
+            this["data-passed"] = 100;
+            this.style.backgroundColor = 'white';
+    }    
 }
-
-
 
 function createDivs(columns, rows)
 {
@@ -66,6 +108,10 @@ function reset()
     createDivs(newColumns, newRows);
 }
 
-const resetButton = document.getElementById('reset');
-resetButton.addEventListener('click', reset);
+document.getElementById('reset').addEventListener('click', reset);
 
+document.getElementById('rainbow').addEventListener('click', () => penMode = 'rainbow');
+
+document.getElementById('grey-scale').addEventListener('click', () => penMode = 'grey-scale');
+
+document.getElementById('eraser').addEventListener('click', () => penMode = 'eraser');
