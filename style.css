@@ -23,3 +23,7 @@ body {
 .colored {
     background-color: pink;
 }
+
+#reset {
+    padding: 5px 20px;
+}
