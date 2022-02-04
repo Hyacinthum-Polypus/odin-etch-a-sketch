@@ -79,8 +79,8 @@ createDivs(16, 16);
 
 function reset()
 {   
-    let newColumns = +prompt("How many columns?");
-    let newRows = +prompt("How many rows?");
+    let newColumns = +prompt("How many columns?", "16");
+    let newRows = +prompt("How many rows?", "16");
 
     console.log(newColumns);
 
