@@ -10,8 +10,8 @@ function randomHue()
 
 function colorIn()
 {
-    this.style.backgroundColor = `hsl(0, 0%, ${10*(10 - this["data-passed"])}%)`;
-    this["data-passed"] = 1 + this["data-passed"];
+    this["data-passed"] = this["data-passed"] - 10;
+    this.style.backgroundColor = `hsl(0, 0%, ${this["data-passed"]}%)`;
 }
 
 
@@ -25,7 +25,7 @@ function createDivs(columns, rows)
         div.style.width = `${100/columns}%`
         div.style.height = `${100/columns}%`
         container.appendChild(div);
-        div["data-passed"] = 0;
+        div["data-passed"] = 100;
         div.addEventListener('mouseover', colorIn);
         boxes.push(div);
     }

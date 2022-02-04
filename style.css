@@ -1,6 +1,15 @@
 body {
     margin: 0;
     text-align: center;
+    background-color: whitesmoke
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+button {
+    background-color: white;
 }
 
 #container {
@@ -9,19 +18,15 @@ body {
     width: 40vw;
     height: 40vw;
     margin: 10px auto;
+    box-shadow: 0 10px 10px 0;
 }
+
 
 .box {
     height: 6.25%;
     width: 6.25%;
     box-sizing: border-box;
-
-    border: 1px solid black;
-    background-color: grey;
-}
-
-.colored {
-    
+    background-color: white;
 }
 
 #reset {
