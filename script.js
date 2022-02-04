@@ -1,10 +1,20 @@
 const container = document.getElementById('container');
 let boxes = [];
 
+function randomHue()
+{
+    let randomNumber = Math.floor(Math.random() * 1000) % 360;
+    console.log(randomNumber)
+    return randomNumber;
+}
+
 function colorIn()
 {
-    this.classList.add('colored')
+    this.style.backgroundColor = `hsl(${randomHue()}, 100%, 50%)`;
+    this["data-passed"] = 'true';
 }
+
+
 
 function createDivs(columns, rows)
 {
