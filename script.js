@@ -40,7 +40,17 @@ function reset()
 
     if(newColumns > 100 || newRows > 100) 
     {
-        alert("Columns and rows cannot be over 100!")
+        alert("Columns and rows cannot be over 100!");
+        return;
+    }
+    else if(newColumns < 1 || newRows < 1)
+    {
+        alert("Columns and rows cannot be below 1!");
+        return;
+    }
+    else if(typeof newColumns != "number" || typeof newRows != "number")
+    {
+        alert("Inputs must be a number!");
         return;
     }
 
