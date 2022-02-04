@@ -23,12 +23,14 @@ function createDivs(columns, rows)
         const div = document.createElement('div');
         div.classList.add('box');
         div.style.width = `${100/columns}%`
-        div.style.height = `${100/columns}%`
-        container.appendChild(div);
+        div.style.height = `${100/rows}%`
         div["data-passed"] = 100;
         div.addEventListener('mouseover', colorIn);
+
+        container.appendChild(div);
         boxes.push(div);
     }
+    container.style.height = `${rows/columns*40}vw`
 }
 
 createDivs(16, 16);
