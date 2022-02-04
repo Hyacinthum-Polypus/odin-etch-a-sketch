@@ -35,8 +35,10 @@ createDivs(16, 16);
 
 function reset()
 {   
-    let newColumns = prompt("How many columns?");
-    let newRows = prompt("How many rows?");
+    let newColumns = +prompt("How many columns?");
+    let newRows = +prompt("How many rows?");
+
+    console.log(newColumns);
 
     if(newColumns > 100 || newRows > 100) 
     {
@@ -48,11 +50,13 @@ function reset()
         alert("Columns and rows cannot be below 1!");
         return;
     }
-    else if(typeof newColumns != "number" || typeof newRows != "number")
+    else if(Number.isNaN(newColumns) || Number.isNaN(newRows))
     {
         alert("Inputs must be a number!");
         return;
     }
+
+    console.log("hello?")
 
     boxes.forEach(box => box.remove());
     for(box of boxes) boxes.pop();
